@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+import { Schema, model, models } from 'mongoose';
 
 const TransactionSchema = new Schema({
   createdAt: {
@@ -25,6 +25,7 @@ const TransactionSchema = new Schema({
     ref: 'User',
   },
 });
+
 const Transaction =
   models?.Transaction || model('Transaction', TransactionSchema);
 
